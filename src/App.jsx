@@ -10,6 +10,9 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setPostData((prevPosts) => [...prevPosts, { title, content, author }]);
+    setTitle("");
+    setContent("");
+    setAuthore("");
   };
 
   const handleDelete = (id) => {
@@ -38,6 +41,7 @@ function App() {
           <label htmlFor="">Title</label>
           <input
             onChange={(event) => setTitle(event.target.value)}
+            value={title}
             className="border ml-4 p-2 rounded"
             type="text"
           />
@@ -46,6 +50,7 @@ function App() {
           <label htmlFor="">Content</label>
           <input
             onChange={(event) => setContent(event.target.value)}
+            value={content}
             className="border ml-4 p-2 rounded"
             type="text"
           />
@@ -54,6 +59,7 @@ function App() {
           <label htmlFor="">Author</label>
           <input
             onChange={(event) => setAuthore(event.target.value)}
+            value={author}
             className="border ml-4 p-2 rounded"
             type="text"
           />
