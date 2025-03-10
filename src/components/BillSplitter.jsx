@@ -1,12 +1,6 @@
 import React from "react";
-import { useState } from "react";
 
-function BillSplitter() {
-  const [bilsAmount, setBilsAmount] = useState("");
-  const [numberPeople, setNumberPeople] = useState("");
-  console.log(numberPeople);
-  console.log(bilsAmount);
-
+function BillSplitter({ setBilsAmount, setNumberPeople }) {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -19,7 +13,9 @@ function BillSplitter() {
           <input
             className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
             type="text"
-            onChange={(event) => setBilsAmount(event.target.value)}
+            onChange={(event) => {
+              setBilsAmount(event.target.value);
+            }}
           />
           <img src="dollar.png" alt="" className="absolute top-5 left-3" />
         </div>
