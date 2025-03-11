@@ -1,10 +1,6 @@
 import React from "react";
 
-function BillSplitter({ setBilsAmount, setNumberPeople }) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
+function BillSplitter({ setBilsAmount, setNumberPeople, handleSubmit }) {
   return (
     <div className="">
       <form onSubmit={handleSubmit}>
