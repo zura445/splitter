@@ -3,24 +3,21 @@ import ResultPanel from "./components/ResultPanel";
 import { useState } from "react";
 
 function App() {
-  const [saveBils, setSaveBils] = useState("");
-  const [savePeople, setSavePeople] = useState("");
-
-  const [bilsAmount, setBilsAmount] = useState("");
-  const [numberPeople, setNumberPeople] = useState("");
+  const [saveBils, setSaveBils] = useState(0);
+  const [savePeople, setSavePeople] = useState(0);
 
   const handleSave = (event) => {
     event.preventDefault();
-    setSaveBils(bilsAmount);
-    setSavePeople(numberPeople);
+    setSaveBils(saveBils);
+    setSavePeople(savePeople);
   };
 
   return (
     <>
       <div className="p-8 bg-white rounded-3xl grid grid-cols-2 gap-12">
         <BillSplitter
-          setBilsAmount={setBilsAmount}
-          setNumberPeople={setNumberPeople}
+          setSaveBils={setSaveBils}
+          setSavePeople={setSavePeople}
           handleSave={handleSave}
         />
         <ResultPanel

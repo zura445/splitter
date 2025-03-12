@@ -1,6 +1,6 @@
 import React from "react";
 
-function BillSplitter({ setBilsAmount, setNumberPeople, handleSave }) {
+function BillSplitter({ setSaveBils, setSavePeople, handleSave }) {
   return (
     <div className="">
       <form onSubmit={handleSave}>
@@ -8,12 +8,16 @@ function BillSplitter({ setBilsAmount, setNumberPeople, handleSave }) {
         <div className="relative">
           <input
             className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
-            type="text"
+            type="number"
             onChange={(event) => {
-              setBilsAmount(event.target.value);
+              setSaveBils(event.target.value);
             }}
           />
-          <img src="dollar.png" alt="" className="absolute top-5 left-3" />
+          <img
+            src="dollar.png"
+            alt="dollar image"
+            className="absolute top-5 left-3"
+          />
         </div>
         <p className="font-bold mt-10">Select Tip %</p>
         <div className="text-white mt-4">
@@ -43,9 +47,9 @@ function BillSplitter({ setBilsAmount, setNumberPeople, handleSave }) {
         <p className="mt-10 font-bold">Number of People</p>
         <div className="relative">
           <input
-            type="text"
+            type="number"
             className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
-            onChange={(event) => setNumberPeople(event.target.value)}
+            onChange={(event) => setSavePeople(event.target.value)}
           />
           <img src="Shape.png" alt="" className="absolute top-5 left-3" />
         </div>
