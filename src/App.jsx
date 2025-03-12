@@ -4,14 +4,15 @@ import { useState } from "react";
 
 function App() {
   const [saveBils, setSaveBils] = useState("");
-  console.log("🚀 ~ App ~ saveBils:", saveBils);
+  const [savePeople, setSavePeople] = useState("");
 
   const [bilsAmount, setBilsAmount] = useState("");
   const [numberPeople, setNumberPeople] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSave = (event) => {
     event.preventDefault();
     setSaveBils(bilsAmount);
+    setSavePeople(numberPeople);
   };
 
   return (
@@ -20,9 +21,13 @@ function App() {
         <BillSplitter
           setBilsAmount={setBilsAmount}
           setNumberPeople={setNumberPeople}
-          handleSubmit={handleSubmit}
+          handleSave={handleSave}
         />
-        <ResultPanel handleSubmit={handleSubmit} saveBils={saveBils} />
+        <ResultPanel
+          saveBils={saveBils}
+          savePeople={savePeople}
+          handleSave={handleSave}
+        />
       </div>
     </>
   );

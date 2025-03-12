@@ -1,9 +1,9 @@
 import React from "react";
 
-function BillSplitter({ setBilsAmount, setNumberPeople, handleSubmit }) {
+function BillSplitter({ setBilsAmount, setNumberPeople, handleSave }) {
   return (
     <div className="">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSave}>
         <p className="font-bold">Bill</p>
         <div className="relative">
           <input
