@@ -1,12 +1,11 @@
 import React from "react";
 
-const Percent = ["5%", "10%", "15%", "25%", "50%"];
-
 function BillSplitter({
   setSaveBils,
   setSavePeople,
   handleSave,
-  percentageFunc,
+  setPercentageAmount,
+  Percent,
 }) {
   return (
     <div className="">
@@ -28,21 +27,10 @@ function BillSplitter({
         </div>
         <p className="font-bold mt-10">Select Tip %</p>
         <div className="text-white mt-4">
-          <div className="flex gap-2">
-            {Percent.slice(0, 3).map((item, index) => (
+          <div className="text-white mt-4 grid grid-cols-3 grid-rows-2 gap-2">
+            {Percent.map((item, index) => (
               <button
-                onChange={percentageFunc}
-                key={index}
-                className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-          <div className="flex gap-2 mt-3">
-            {Percent.slice(3, 6).map((item, index) => (
-              <button
-                onChange={percentageFunc}
+                onClick={() => setPercentageAmount(item)}
                 key={index}
                 className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
               >
@@ -51,8 +39,9 @@ function BillSplitter({
             ))}
             <input
               type="number"
-              className="w-[120px] bg-green-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center"
+              className="w-[120px] bg-green-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center col-start-3 row-start-2"
               placeholder="Custom"
+              onChange={(e) => setPercentageAmount(e.target.value + "%")}
             />
           </div>
         </div>

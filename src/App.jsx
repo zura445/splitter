@@ -2,15 +2,13 @@ import BillSplitter from "./components/BillSplitter";
 import ResultPanel from "./components/ResultPanel";
 import { useState } from "react";
 
+const Percent = ["5%", "10%", "15%", "25%", "50%"];
+
 function App() {
   const [saveBils, setSaveBils] = useState(0);
   const [savePeople, setSavePeople] = useState(0);
-  const [percentageAmount, setPercentageAmount] = useState(0);
-
-  const percentageFunc = () => {
-    setPercentageAmount(percentageAmount);
-  };
-  console.log("🚀 ~ percentageFunc ~ percentageFunc:", percentageFunc);
+  const [percentageAmount, setPercentageAmount] = useState(null);
+  console.log("🚀 ~ App ~ percentageAmount:", percentageAmount);
 
   const handleSave = (event) => {
     event.preventDefault();
@@ -25,7 +23,8 @@ function App() {
           setSaveBils={setSaveBils}
           setSavePeople={setSavePeople}
           handleSave={handleSave}
-          percentageFunc={percentageFunc}
+          setPercentageAmount={setPercentageAmount}
+          Percent={Percent}
         />
         <ResultPanel
           saveBils={saveBils}
