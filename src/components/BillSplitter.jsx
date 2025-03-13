@@ -1,6 +1,13 @@
 import React from "react";
 
-function BillSplitter({ setSaveBils, setSavePeople, handleSave }) {
+const Percent = ["5%", "10%", "15%", "25%", "50%"];
+
+function BillSplitter({
+  setSaveBils,
+  setSavePeople,
+  handleSave,
+  percentageFunc,
+}) {
   return (
     <div className="">
       <form onSubmit={handleSave}>
@@ -21,27 +28,32 @@ function BillSplitter({ setSaveBils, setSavePeople, handleSave }) {
         </div>
         <p className="font-bold mt-10">Select Tip %</p>
         <div className="text-white mt-4">
-          <div className="gap-2 flex">
-            <button className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl">
-              5%
-            </button>
-            <button className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl">
-              10%
-            </button>
-            <button className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl">
-              15%
-            </button>
+          <div className="flex gap-2">
+            {Percent.slice(0, 3).map((item, index) => (
+              <button
+                onChange={percentageFunc}
+                key={index}
+                className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
+              >
+                {item}
+              </button>
+            ))}
           </div>
-          <div className="gap-2 flex  mt-3">
-            <button className="cursor-pointer w-[120px] bg-green-900 h-[48px] rounded-lg font-bold text-2xl">
-              25%
-            </button>
-            <button className="cursor-pointer w-[120px] bg-green-900 h-[48px] rounded-lg font-bold text-2xl">
-              50%
-            </button>
-            <button className="cursor-pointer w-[120px] bg-green-100 text-gray-600 h-[48px] rounded-lg font-bold text-2xl">
-              Custom
-            </button>
+          <div className="flex gap-2 mt-3">
+            {Percent.slice(3, 6).map((item, index) => (
+              <button
+                onChange={percentageFunc}
+                key={index}
+                className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
+              >
+                {item}
+              </button>
+            ))}
+            <input
+              type="number"
+              className="w-[120px] bg-green-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center"
+              placeholder="Custom"
+            />
           </div>
         </div>
         <p className="mt-10 font-bold">Number of People</p>
