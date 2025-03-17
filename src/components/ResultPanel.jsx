@@ -1,6 +1,6 @@
 import React from "react";
 
-function ResultPanel({ saveBils, savePeople, handleSave }) {
+function ResultPanel({ handleSave, tipAmountFunc, totalAmountFunc }) {
   return (
     <div className="bg-green-900 p-10 rounded-xl">
       <div className="flex justify-between">
@@ -8,14 +8,18 @@ function ResultPanel({ saveBils, savePeople, handleSave }) {
           <p className="text-white">Tip Amount</p>
           <p className="text-gray-300 text-xs">/ person</p>
         </div>
-        <div className="text-5xl text-green-200 font-bold">{saveBils}</div>
+        <div className="text-5xl text-green-200 font-bold">
+          ${tipAmountFunc().toFixed(2)}
+        </div>
       </div>
       <div className="flex justify-between mt-10">
         <div className="font-bold">
           <p className="text-white">Total</p>
           <p className="text-gray-300 text-xs">/ person</p>
         </div>
-        <div className="text-5xl text-green-200 font-bold">{savePeople}</div>
+        <div className="text-5xl text-green-200 font-bold">
+          ${totalAmountFunc().toFixed(2)}
+        </div>
       </div>
       <button
         onClick={handleSave}

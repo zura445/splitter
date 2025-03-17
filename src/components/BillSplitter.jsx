@@ -34,7 +34,7 @@ function BillSplitter({
                 key={index}
                 className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
               >
-                {item}
+                {item} %
               </button>
             ))}
             <input
