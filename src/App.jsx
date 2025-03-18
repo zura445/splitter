@@ -16,8 +16,8 @@ function App() {
   };
 
   const tipAmountFunc = () => {
-    if (saveBils && percentageAmount) {
-      return (saveBils * percentageAmount) / 100 / savePeople;
+    if (saveBils && percentageAmount && savePeople) {
+      return (saveBils + percentageAmount) / 100 / savePeople;
     }
     return 0;
   };

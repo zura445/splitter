@@ -41,7 +41,7 @@ function BillSplitter({
               type="number"
               className="w-[120px] bg-green-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center col-start-3 row-start-2"
               placeholder="Custom"
-              onChange={(e) => setPercentageAmount(e.target.value + "%")}
+              onChange={(e) => setPercentageAmount(e.target.value)}
             />
           </div>
         </div>
