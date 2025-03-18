@@ -6,6 +6,7 @@ function BillSplitter({
   handleSave,
   setPercentageAmount,
   Percent,
+  percentageAmount,
 }) {
   return (
     <div className="">
@@ -33,6 +34,10 @@ function BillSplitter({
                 onClick={() => setPercentageAmount(item)}
                 key={index}
                 className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
+                style={{
+                  backgroundColor:
+                    percentageAmount === item ? "#c6f6d5" : "#22543d",
+                }}
               >
                 {item} %
               </button>

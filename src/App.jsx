@@ -38,6 +38,7 @@ function App() {
           handleSave={handleSave}
           setPercentageAmount={setPercentageAmount}
           Percent={Percent}
+          percentageAmount={percentageAmount}
         />
         <ResultPanel
           saveBils={saveBils}
