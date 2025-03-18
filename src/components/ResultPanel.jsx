@@ -1,6 +1,6 @@
 import React from "react";
 
-function ResultPanel({ handleSave, tipAmountFunc, totalAmountFunc }) {
+function ResultPanel({ tipAmountFunc, totalAmountFunc, clearFunc }) {
   return (
     <div className="bg-green-900 p-10 rounded-xl">
       <div className="flex justify-between">
@@ -22,7 +22,7 @@ function ResultPanel({ handleSave, tipAmountFunc, totalAmountFunc }) {
         </div>
       </div>
       <button
-        onClick={handleSave}
+        onClick={clearFunc}
         className="mt-[133px] w-full bg-green-200 h-12 font-bold rounded cursor-pointer"
       >
         RESET

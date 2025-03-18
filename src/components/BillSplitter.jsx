@@ -1,12 +1,14 @@
 import React from "react";
 
 function BillSplitter({
-  setSaveBils,
+  setSaveBills,
   setSavePeople,
   handleSave,
   setPercentageAmount,
   Percent,
   percentageAmount,
+  saveBills,
+  savePeople,
 }) {
   return (
     <div className="">
@@ -17,8 +19,9 @@ function BillSplitter({
             className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
             type="number"
             onChange={(event) => {
-              setSaveBils(event.target.value);
+              setSaveBills(event.target.value);
             }}
+            value={saveBills}
           />
           <img
             src="dollar.png"
@@ -56,6 +59,7 @@ function BillSplitter({
             type="number"
             className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
             onChange={(event) => setSavePeople(event.target.value)}
+            value={savePeople}
           />
           <img src="Shape.png" alt="" className="absolute top-5 left-3" />
         </div>
