@@ -1,6 +1,12 @@
 import React from "react";
 
-function ResultPanel({ tipAmountFunc, totalAmountFunc, clearFunc }) {
+function ResultPanel({
+  tipAmountFunc,
+  totalAmountFunc,
+  clearFunc,
+  saveBills,
+  savePeople,
+}) {
   return (
     <div className="bg-darck-blue p-10 rounded-xl">
       <div className="flex justify-between">
@@ -22,8 +28,13 @@ function ResultPanel({ tipAmountFunc, totalAmountFunc, clearFunc }) {
         </div>
       </div>
       <button
+        // არ მუშაონს ჰოვერი
         onClick={clearFunc}
         className="mt-[133px] w-full bg-blue-800 hover:bg-blue-500 h-12 font-bold rounded cursor-pointer"
+        style={{
+          backgroundColor:
+            saveBills > 0 && savePeople > 0 ? "#26C2AE" : "#0D686D",
+        }}
       >
         RESET
       </button>

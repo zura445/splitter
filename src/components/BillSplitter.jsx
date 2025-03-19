@@ -22,6 +22,7 @@ function BillSplitter({
               setSaveBills(event.target.value);
             }}
             value={saveBills}
+            placeholder="0"
           />
           <img
             src="dollar.png"
@@ -39,7 +40,7 @@ function BillSplitter({
                 className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
                 style={{
                   backgroundColor:
-                    percentageAmount === item ? "#c6f6d5" : "#22543d",
+                    percentageAmount === item ? "#9FE8DF" : "#00474b",
                 }}
               >
                 {item} %
@@ -47,7 +48,7 @@ function BillSplitter({
             ))}
             <input
               type="number"
-              className="w-[120px] bg-blue-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center col-start-3 row-start-2"
+              className="w-[120px] bg-blue-100 outline-none rounded-xl text-darck-blue p-2 font-bold text-center col-start-3 row-start-2"
               placeholder="Custom"
               onChange={(e) => setPercentageAmount(e.target.value)}
             />
@@ -60,6 +61,7 @@ function BillSplitter({
             className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
             onChange={(event) => setSavePeople(event.target.value)}
             value={savePeople}
+            placeholder="0"
           />
           <img src="Shape.png" alt="" className="absolute top-5 left-3" />
         </div>
