@@ -16,7 +16,7 @@ function BillSplitter({
         <p className="font-bold">Bill</p>
         <div className="relative">
           <input
-            className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
+            className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none w-full md:w-[379px]"
             type="number"
             onChange={(event) => {
               setSaveBills(event.target.value);
@@ -37,7 +37,7 @@ function BillSplitter({
               <button
                 onClick={() => setPercentageAmount(item)}
                 key={index}
-                className="cursor-pointer w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
+                className="cursor-pointer w-auto md:w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
                 style={{
                   backgroundColor:
                     percentageAmount === item ? "#9FE8DF" : "#00474b",
@@ -48,21 +48,27 @@ function BillSplitter({
             ))}
             <input
               type="number"
-              className="w-[120px] bg-blue-100 outline-none rounded-xl text-darck-blue p-2 font-bold text-center col-start-3 row-start-2"
+              className="w-auto md:w-[120px] bg-blue-100 outline-none rounded-xl text-darck-blue p-2 font-bold text-center col-start-3 row-start-2"
               placeholder="Custom"
               onChange={(e) => setPercentageAmount(e.target.value)}
             />
           </div>
         </div>
-        <p className="mt-10 font-bold">Number of People</p>
+        <div className="flex justify-between mt-10 font-bold">
+          <p>Number of People</p>
+          {parseInt(savePeople) <= 0 && (
+            <p className="text-red-400">Can’t be zero</p>
+          )}
+        </div>
         <div className="relative">
           <input
             type="number"
-            className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
+            className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none w-full md:w-[379px]"
             onChange={(event) => setSavePeople(event.target.value)}
             value={savePeople}
             placeholder="0"
           />
+
           <img src="Shape.png" alt="" className="absolute top-5 left-3" />
         </div>
       </form>

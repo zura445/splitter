@@ -30,7 +30,7 @@ function ResultPanel({
       <button
         // არ მუშაონს ჰოვერი
         onClick={clearFunc}
-        className="mt-[133px] w-full bg-blue-800 hover:bg-blue-500 h-12 font-bold rounded cursor-pointer"
+        className="mt-[133px] w-full bg-blue-800 hover:bg-blue-500 h-12 font-bold rounded cursor-pointer text-darck-blue"
         style={{
           backgroundColor:
             saveBills > 0 && savePeople > 0 ? "#26C2AE" : "#0D686D",
