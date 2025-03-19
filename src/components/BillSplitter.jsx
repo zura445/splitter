@@ -16,7 +16,7 @@ function BillSplitter({
         <p className="font-bold">Bill</p>
         <div className="relative">
           <input
-            className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
+            className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
             type="number"
             onChange={(event) => {
               setSaveBills(event.target.value);
@@ -47,7 +47,7 @@ function BillSplitter({
             ))}
             <input
               type="number"
-              className="w-[120px] bg-green-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center col-start-3 row-start-2"
+              className="w-[120px] bg-blue-100 outline-none rounded-xl text-green-800 p-2 font-bold text-center col-start-3 row-start-2"
               placeholder="Custom"
               onChange={(e) => setPercentageAmount(e.target.value)}
             />
@@ -57,7 +57,7 @@ function BillSplitter({
         <div className="relative">
           <input
             type="number"
-            className="h-12 px-5 bg-green-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
+            className="h-12 px-5 bg-blue-100 text-green-800 font-bold mt-1.5 rounded-xl text-right outline-none  w-[379px]"
             onChange={(event) => setSavePeople(event.target.value)}
             value={savePeople}
           />
