@@ -37,11 +37,9 @@ function BillSplitter({
               <button
                 onClick={() => setPercentageAmount(item)}
                 key={index}
-                className="cursor-pointer w-auto md:w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl"
-                style={{
-                  backgroundColor:
-                    percentageAmount === item ? "#9FE8DF" : "#00474b",
-                }}
+                className={`cursor-pointer w-auto md:w-[120px] h-[48px] bg-green-900 rounded-lg font-bold text-2xl
+                  ${percentageAmount === item ? "bg-[#9FE8DF]" : "bg-[#00474b]"}
+                  `}
               >
                 {item} %
               </button>
