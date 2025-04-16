@@ -46,6 +46,7 @@ function BillSplitter({
             ))}
             <input
               type="number"
+              value={percentageAmount}
               className="w-auto md:w-[120px] bg-blue-100 outline-none rounded-xl text-darck-blue p-2 font-bold text-center col-start-3 row-start-2"
               placeholder="Custom"
               onChange={(e) => setPercentageAmount(e.target.value)}

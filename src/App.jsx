@@ -8,7 +8,6 @@ function App() {
   const [saveBills, setSaveBills] = useState("");
   const [savePeople, setSavePeople] = useState("");
   const [percentageAmount, setPercentageAmount] = useState();
-  console.log("🚀 ~ App ~ percentageAmount:", percentageAmount);
 
   const handleSave = (event) => {
     event.preventDefault();
